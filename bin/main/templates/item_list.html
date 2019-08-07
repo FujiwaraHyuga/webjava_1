@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>UserList</title>
+</head>
+<body>
+<span class="message" th:text="${message}"></span>
+<form action="#" th:action="@{/list}" th:object="${com_name_Form}" method="post">
+
+<table>
+  <tbody>
+  <tr>商品一覧</tr>
+    <tr>
+      <td>商品名</td>
+      <td>金額</td>
+      <td>個数</td>
+    </tr>
+    <tr th:each="item_list:${item_list}">
+      <td th:text="${item_list.key}"></td>
+      <td th:text="${item_list.value}"></td>
+      <td>
+        <select name"kosu_list">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          </select>
+      </td>
+      <td><input type="submit" value="カート" />    </td>
+      </tr>
+  </tbody>
+</table>
+ </form>
+
+
+<table>
+  <tbody>
+  <tr>商品一覧</tr>
+    <tr>
+      <td>商品名</td>
+      <td>金額</td>
+      <td>個数</td>
+    </tr>
+    <tr th:each="com_name_form:${com_name_form}">
+      <td th:text="${com_name_form.name}"></td>
+      <td th:text="${com_name_form.value}"></td>
+      <td th:text="${com_name_form.kosu}"></td>
+      </tr>
+  </tbody>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
